@@ -10,8 +10,8 @@ app.secret_key = '12346554'
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'jbg9787667597@gmail.com'
-app.config['MAIL_PASSWORD'] = 'jackson1999bruno'
+app.config['MAIL_USERNAME'] = 'jbg9*******597@gmail.com'
+app.config['MAIL_PASSWORD'] = '9********'
 
 
 app.config['MAIL_USE_TLS'] = False
@@ -32,7 +32,7 @@ def register():
     email = request.args.get("email")
     mobile = request.args.get("mobile")
     deg = request.args.get("deg")
-    con = MongoClient("mongodb+srv://jackson:9787@cluster0.tptow.mongodb.net/topcollege?retryWrites=true&w=majority")
+    con = MongoClient("mongodb+srv://********")
     db = con ['user']
     col=db['reg']
     now = datetime.now()
@@ -57,7 +57,7 @@ def register():
 def login():
     email = request.args.get("email")
     password = request.args.get("password")
-    con = MongoClient("mongodb+srv://jackson:9787@cluster0.tptow.mongodb.net/topcollege?retryWrites=true&w=majority")
+    con = MongoClient("mongodb+srv://")
     db = con['user']
     col = db['reg']
     now = datetime.now()
@@ -92,7 +92,7 @@ def signin():
 @app.route('/verify', methods=['GET'])
 def verify():
     email = request.args.get('email')
-    msg = Message(subject='OTP', sender='jbg9787667597@gmail.com', recipients=[email])
+    msg = Message(subject='OTP', sender='jbg9787*******@gmail.com', recipients=[email])
     otp = randint(100000, 999999)
 
     msg.body = str(otp)
@@ -106,7 +106,7 @@ def verify():
 #
 @app.route("/cards")
 def cards():
-    con = MongoClient("mongodb+srv://jackson:9787@cluster0.tptow.mongodb.net/topcollege?retryWrites=true&w=majority")
+    con = MongoClient("mongodb+srv://")
     db = con['collegeweb']
     col = db['colleges']
     res=[]
@@ -118,7 +118,7 @@ def cards():
 # @app.route("/search",methods=['GET'])
 # def ver():
 #     search=request.args.get('search')
-#     con = MongoClient("mongodb+srv://jackson:9787@cluster0.tptow.mongodb.net/topcollege?retryWrites=true&w=majority")
+#     con = MongoClient("mongodb+srv://")
 #     db = con['user']
 #     col = db['colleges']
 #     r=[]
